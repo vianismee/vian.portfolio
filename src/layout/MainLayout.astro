@@ -1,0 +1,22 @@
+---
+// ViewTransitions
+import { ViewTransitions } from "astro:transitions"
+import Navigation from "../components/Navigation.astro" 
+
+const {title = "Vian"} = Astro.props
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,501,700,701,1,2&display=swap" rel="stylesheet">
+		<title>{title}</title>
+		<ViewTransitions/>
+	</head>
+	<body class="font-satoshi">
+		<Navigation />
+		<slot/>
+	</body>
+</html>
