@@ -1,11 +1,13 @@
 ---
+import Card from "../components/card.astro";
 import MainLayout from "../layout/MainLayout.astro";
+
 
 ---
 
 <MainLayout>
-	<section class="bg-zinc-800 pb-[50px] -mt-[65px] pt-[100px]">
-		<div class="h-screen p-10">
+	<section class="bg-zinc-800 pb-[50px] -mt-[65px] pt-[100px] h-screen">
+		<div class="p-10">
 			<article class="lg:w-[1000px] font-bold text-white lg:text-[60px] text-3xl text-center lg:leading-snug lg:mx-auto">
 				<h1 class="">
 					Hallo!👋🏻<br> Gua <span class="gradient"><a href="https://instagram.com/vianismee.eth/" class="cursor-pointer">Vian</a></span>, gua lagi belajar Web Development Pake
@@ -15,5 +17,6 @@ import MainLayout from "../layout/MainLayout.astro";
 				</a>
 			</article>
 		</div>
+		<Card />
 	</section>
 </MainLayout>

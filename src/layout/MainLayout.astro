@@ -2,6 +2,7 @@
 // ViewTransitions
 import { ViewTransitions } from "astro:transitions"
 import Navigation from "../components/Navigation.astro" 
+import { Icon } from 'astro-icon/components'
 
 const {title = "Vian"} = Astro.props
 ---
@@ -27,5 +28,9 @@ const {title = "Vian"} = Astro.props
 		background: -webkit-linear-gradient(196deg, rgba(17,17,183,1) 0%, rgba(0,212,255,1) 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+
+	.box-shadow {
+		box-shadow: 30px 15px 70px -45px #00d4ff;
 	}
 </style>
