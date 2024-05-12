@@ -17,4 +17,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-> @master Commit #1 [] 
+> @master Commit #1 SHA [3ca4e9f]
