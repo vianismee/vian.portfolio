@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.0.0] First Commit - 12/05/2024
+## [0.0.3] First Commit - 18/05/2024
+
+### Added
+- Add New Navigation Bar
+- Add function for Copy text
+
+### Changed
+
+
+### Removed
+- Card Code
+
+> @master Commit #3 SHA [d64cf0f]
+
+---
+## [0.0.2] First Commit - 12/05/2024
 
 ### Added
 - v0.0 Navigation Bar
@@ -17,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-> @master Commit #1 SHA [3ca4e9f]
+> @master Commit #2 SHA [ce9e6bc]
 
 ---
 
