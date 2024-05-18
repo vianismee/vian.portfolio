@@ -10,13 +10,71 @@ import MainLayout from "../layout/MainLayout.astro";
 		<div class="p-10">
 			<article class="lg:w-[1000px] font-bold text-white lg:text-[60px] text-3xl text-center lg:leading-snug lg:mx-auto">
 				<h1 class="">
-					Hallo!👋🏻<br> Gua <span class="gradient"><a href="https://instagram.com/vianismee.eth/" class="cursor-pointer">Vian</a></span>, gua lagi belajar Web Development Pake
+					<span id="text" class="typing-animtion">Hallo!</span>👋🏻<br> Gua <span class="gradient"><a href="https://instagram.com/vianismee.eth/" class="cursor-pointer">Vian</a></span>, gua lagi belajar Web Development Pake
 				</h1>
+				<script>
+					const texts = ["Hallo", "Hai", "Holla"];
+					let index = 0;
+					let isDeleting = false;
+					let currentText = '';
+					let typingSpeed = 190; // Kecepatan mengetik (dalam milidetik)
+			
+					function type() {
+						const text = texts[index];
+						if (isDeleting) {
+							currentText = text.substring(0, currentText.length - 1);
+						} else {
+							currentText = text.substring(0, currentText.length + 1);
+						}
+						document.getElementById("text").textContent = currentText;let typeSpeed = typingSpeed;
+						if (isDeleting) {
+							typeSpeed /= 2; // Menghapus dua kali lebih cepat
+						}
+
+						if (!isDeleting && currentText === text) {
+							typeSpeed = 2500; // Jeda setelah selesai mengetik
+							isDeleting = true;
+						} else if (isDeleting && currentText === '') {
+							isDeleting = false;
+							index = (index + 1) % texts.length;
+						}
+
+						setTimeout(type, typeSpeed);
+					}
+
+					window.onload = function() {
+						type();
+					};
+				</script>
 				<a href="https://astro.build/" class="">
 					<p class="mt-6 mx-auto rounded-[10px] shadow-md lg:border-[4px] text-2xl w-32 lg:w-[300px] lg:py-8 border-green-300 border-[1px] lg:px-4 py-1 lg:rounded-2xl lg:text-[60px] bg-green-500/20 text-green-400 text-center font-bold hover:shadow-2xl">Astro🚀</p>
 				</a>
+				<h1 id="title"></h1>
 				<Card />
 			</article>
 		</div>
 	</section>
 </MainLayout>
+
+<style>
+	.text-container {
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.typing-animation {
+		animation: typing 3s steps(22), blink-caret 0.5s step-end infinite alternate;
+		border-right: 1px solid; /* Ini membuat efek "caret" */
+	}
+
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+	}
+	@keyframes blink-caret {
+            to {
+                border-color: transparent;
+            }
+        }
+</style>

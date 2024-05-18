@@ -5,6 +5,11 @@ import Navigation from "../components/Navigation.astro"
 
 
 const {title = "Vian"} = Astro.props
+
+
+
+
+
 ---
 <html lang="en">
 	<head>
@@ -17,13 +22,13 @@ const {title = "Vian"} = Astro.props
 		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,501,700,701,1,2&display=swap" rel="stylesheet">
 		<title>{title}</title>
 		<ViewTransitions/>
+
 	</head>
 	<body class="overflow-hidden">
 		<Navigation />
 		<slot/>
 	</body>
 </html>
-
 
 <style is:global>
 	.gradient {
