@@ -1,36 +1,22 @@
 ---
 
 ---
-<div class="flex justify-center items-center ">
-    <div class="h-[300px] relative -skew-x-3 skew-y-3">
-        <div class="bg-zinc-800 h-48 aspect-[5/3] rounded-2xl box-shadow border-[1px] border-[#00d4ff] relative overflow-hidden pt-10">
-            <div class="h-10 w-[325px] absolute bg-zinc-100/5 border-[0.5px] border-zinc-500 text-center flex justify-center items-center -translate-y-[42px]">
-                <h1 class="font-bold text-white">
-                    BIOGRAPHY
-                </h1>
-            </div>
-            <div class="static w-full h-full grid grid-cols-2">
-                <div class="col-start-1 p-4">
-                    <div class="w-full h-full bg-[url('https://ik.imagekit.io/viantastory/Astro%20Project/Portfolio/FOTO_PROFILE-removebg-preview.png?updatedAt=1715519148802')] bg-cover rounded-lg"></div>
-                    <div class="w-full h-full bg-[url('https://ik.imagekit.io/viantastory/Astro%20Project/Portfolio/logo.png?updatedAt=1715519247351')] bg-cover rounded-lg -translate-x-6"></div>
-                </div>
-                <div class="col-start-2 p-4">
-                    <article class="font-bold text-2xl -translate-x-2">
-                        <h1 class="gradient">VIANISMEE</h1>
-                        <p class="text-zinc-400 text-sm mt-2 font-medium">Product Development</p>
-                        <p class="text-zinc-400 text-sm mt-1 font-medium"></p>
-                    </article>
-                </div>
-            </div>
-        </div>
-        <div class="absolute py-2 px-4 bg-zinc-400/10 backdrop-blur-sm rounded-xl font-bold text-white z-50 -translate-x-2 -translate-y-4 shadow-md">
-            <h1>Adobe Illustrator</h1>
-        </div>
-        <div class="absolute py-2 px-4 bg-zinc-400/10 backdrop-blur-sm rounded-xl font-bold text-white z-50 translate-x-[250px] -translate-y-[220px] shadow-md">
-            <h1>Figma</h1>
-        </div>
-        <div class="absolute py-2 px-4 bg-zinc-400/10 backdrop-blur-sm rounded-xl font-bold text-white z-50 -translate-x-[45px] -translate-y-[150px] shadow-md">
-            <h1>Quality Control</h1>
-        </div>
-    </div> 
+<div class="text-white inline-flex justify-center items-center px-3 py-2.5 gap-[22.4px] border-[2px] border-blue-500 rounded-md bg-neutral-900 shadow-md">
+    <p class="font-['Consolas'] text-xl"> > chevianbs@gmail.com</p>
+    <button id="copyButton" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+    </button>
 </div>
+<script>
+   document.getElementById('copyButton').addEventListener('click', function() {
+    var email = "chevianbs@gmail.com"
+    // Use the Clipboard API
+    navigator.clipboard.writeText("chevianbs@gmail.com").then(function() {
+        // Success feedback to the user
+        alert( email + ' Copied');
+    }, function(err) {
+        // Error feedback to the user
+        console.error('Could not copy text: ', err);
+    });
+});
+</script>

@@ -5,6 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				satoshi: ['Satoshi', 'San-Serif'],
+				roboto: ['Roboto', 'San-Serif'],
 			}
 		},
 	},

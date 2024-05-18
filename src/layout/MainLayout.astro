@@ -2,7 +2,7 @@
 // ViewTransitions
 import { ViewTransitions } from "astro:transitions"
 import Navigation from "../components/Navigation.astro" 
-import { Icon } from 'astro-icon/components'
+
 
 const {title = "Vian"} = Astro.props
 ---
@@ -12,11 +12,13 @@ const {title = "Vian"} = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<!-- Roboto -->
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,501,700,701,1,2&display=swap" rel="stylesheet">
 		<title>{title}</title>
 		<ViewTransitions/>
 	</head>
-	<body class="font-satoshi overflow-hidden">
+	<body class="overflow-hidden">
 		<Navigation />
 		<slot/>
 	</body>
@@ -32,5 +34,9 @@ const {title = "Vian"} = Astro.props
 
 	.box-shadow {
 		box-shadow: 30px 15px 70px -45px #00d4ff;
+	}
+	.main-btn {
+		background: var(--Main-Color, linear-gradient(211deg, #0B5FD2 -70.36%, #00A8FF 181.88%));
+		box-shadow: 102px 71px 35px 0px rgba(0, 0, 0, 0.00), 65px 45px 32px 0px rgba(0, 0, 0, 0.01), 37px 26px 27px 0px rgba(0, 0, 0, 0.03), 16px 11px 20px 0px rgba(0, 0, 0, 0.04), 4px 3px 11px 0px rgba(0, 0, 0, 0.05);
 	}
 </style>

@@ -18,3 +18,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 > @master Commit #1 SHA [3ca4e9f]
+
+---
+
+## [0.0.0] First Commit - 12/05/2024
+
+### Added
+- v0.0 Navigation Bar
+
+### Changed
+
+
+### Removed
+
+> @master Commit #1 SHA [3ca4e9f]

@@ -1,23 +1,33 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const {pathname} = Astro.url
 const lists = [
     {name:"Profile", url:"/"},
+    {name: "Portfolio", url:"/portfolio"},
     {name:"Project", url:"/project"},
     {name:"✨Blog", url:"/blog"},
 ]
 
-const baseClass = "hover:border-b-2 border-blue-700"
+const baseClass = "hover:border-b-2 border-blue-700 tex-white"
 ---
-<div class="sticky top-4 flex justify-center">
-    <nav class="flex place-items-center bg-zinc-600/15 backdrop-blur-sm text-white justify-between px-10 py-5 rounded-full hover:shadow-lg transition-shadow duration-500">
-        <ul class="flex basis-4/5 gap-4 text-white ">
+<div class="sticky top-4 flex justify-center font-['Roboto'] text-2xl">
+    <nav class="h-[85px] inline-flex gap-[100px] place-items-center bg-zinc-600/15 backdrop-blur-sm text-white justify-between px-[25px] py-[20px] rounded-full hover:shadow-lg transition-shadow duration-500">
+        <div>
+            <img src="/public/LOGO.svg" alt="" class="h-[45px]">
+        </div>
+        <ul class="lg:flex gap-[21px] text-white/40 hidden ">
             {
                 lists.map((item) => (
-                    <li class:list={[baseClass, {"border-b-2":item.url == pathname }]} >
+                    <li class:list={[baseClass, {"border-b-2 text-white":item.url == pathname }]} >
                         <a href={item.url}>{item.name} </a>
                     </li>
                 ))
             }  
         </ul>
+        <button class="py-[10px] px-[20px] rounded-full justify-center items-center inline-flex gap-3 hover:shadow-xl bg-gradient-to-bl from-blue-700 to-sky-500">
+            <div class="text-white font-['Roboto'] font-medium">Contact Me</div>
+            <Icon name="mdi:email-outline"  class="h-[30px] w-[30px]" />
+        </button>
     </nav>
 </div>
