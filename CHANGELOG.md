@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.0] - 19/05/2024
+
+### Added
+- Add Responsive Name About
+
+### Changed
+
+
+### Removed
+
+
+> @master Commit #4 SHA [1793159]
+
 ## [0.0.3] First Commit - 18/05/2024
 
 ### Added
