@@ -6,6 +6,7 @@ export default {
 			fontFamily: {
 				satoshi: ['Satoshi', 'San-Serif'],
 				roboto: ['Roboto', 'San-Serif'],
+				consolas: ['Consolas', 'Monospace'],
 			}
 		},
 	},

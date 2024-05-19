@@ -21,10 +21,8 @@ const {title = "Vian"} = Astro.props
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,501,700,701,1,2&display=swap" rel="stylesheet">
 		<title>{title}</title>
-		<ViewTransitions/>
-
 	</head>
-	<body class="overflow-hidden">
+	<body class="">
 		<Navigation />
 		<slot/>
 	</body>
@@ -45,3 +43,26 @@ const {title = "Vian"} = Astro.props
 		box-shadow: 102px 71px 35px 0px rgba(0, 0, 0, 0.00), 65px 45px 32px 0px rgba(0, 0, 0, 0.01), 37px 26px 27px 0px rgba(0, 0, 0, 0.03), 16px 11px 20px 0px rgba(0, 0, 0, 0.04), 4px 3px 11px 0px rgba(0, 0, 0, 0.05);
 	}
 </style>
+<style>
+	.text-container {
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.typing-animation {
+		animation: typing 3s steps(22), blink-caret 0.5s step-end infinite alternate;
+		border-right: 1px solid; /* Ini membuat efek "caret" */
+	}
+
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+	}
+	@keyframes blink-caret {
+            to {
+                border-color: transparent;
+            }
+        }
+</style>
+
