@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [0.1.1] - 6/01/2024
+
+### Added
+
+### Changed
+- Cleaning Code
+
+
+### Removed
+
+
+> @master Commit #5 SHA [6dc481d]
+
 
 ## [0.1.0] - 19/05/2024
 
