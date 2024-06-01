@@ -1,9 +1,11 @@
 ---
+import BlogLink from "../components/BlogLink.astro";
 import Email from "../components/emailCopy.astro";
 import MainLayout from "../layout/MainLayout.astro";
 ---
 <MainLayout PageTitle="About">
 	<section class="bg-zinc-800 pt-[100px] h-screen">
+		<BlogLink />
 		<div class="p-10 grid justify-center">
 			<div class="grid place-items-center">
 				<div class="bg-[#131313] lg:h-[605px] lg:w-[1242px] h-[600px] w-screen lg:rounded-[47px]  lg:border-[4px] border-neutral-700 lg:py-[61px] lg:pl-[80px] pt-10 text-white">
@@ -28,8 +30,8 @@ import MainLayout from "../layout/MainLayout.astro";
 			</div>
 		</div>
 	</section>
+	<section class="h-screen bg-zinc-800"></section>
 </MainLayout>
-
 <script type="module">
 	const texts = ["Hallo,", "Konichiwa,", "Hej,", "Annyeong,", "Hoi,", "Ola,", "Salut,", "Ciao," ];
 	let index = 0;
