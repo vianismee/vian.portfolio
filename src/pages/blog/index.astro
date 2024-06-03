@@ -1,7 +1,22 @@
 ---
 import MainLayout from "../../layout/MainLayout.astro";
+const posts = await Astro.glob("../blog/post/*.md");
 ---
 
 <MainLayout PageTitle="Blog">
-    <h1>Blog</h1>
+  <section class="h-screen bg-zinc-800">
+    <div class="text-white flex justify-center">
+      <h1 class="text-2xl font-bold">My Blog</h1>
+    </div>
+    <div>
+      {
+        posts.map((post) => (
+          <article>
+            <h1>{post.frontmatter.title}</h1>
+            <a href={post.url}>Show More</a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
 </MainLayout>

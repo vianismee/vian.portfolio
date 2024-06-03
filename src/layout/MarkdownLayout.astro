@@ -1,0 +1,26 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<head>
+  <title>Blog | {frontmatter.title}</title>
+</head>
+<body class="bg-zinc-800 text-white mt-[4rem]">
+  <section class="">
+    <div class="mx-auto px-8 max-w-7xl">
+      <aside
+        class="bg-zinc-500 block right-auto fixed z-10 inset-0 top-[150px] w-[19rem] left-[max(0px,calc(50%-45rem))] pl-8 pr-6 h-[10rem] pt-6 rounded-2xl"
+      >
+        <h1 class="font-bold">
+          {frontmatter.author}
+        </h1>
+      </aside>
+      <article class="pl-[18rem] pr-10">
+        <h1 class="text-[3rem] font-bold">{frontmatter.title}</h1>
+
+        <hr class="border-1 border-zinc-600 mb-10 mt-3" />
+        <slot />
+      </article>
+    </div>
+  </section>
+</body>
