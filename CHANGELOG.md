@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.5] - 06/06/2024
+
+### Added
+
+- Add Tailwind Typography
+
+```terminal
+pnpm install @tailwind/typography
+```
+
+- Styling Markdown from MarkdownLayout
+
+### Changed
+
+### Removed
+
+> @master Commit #7 SHA [2c29fad]
+
 ## [0.2.0] - 03/06/2024
 
 ### Added
