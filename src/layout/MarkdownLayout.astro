@@ -1,11 +1,13 @@
 ---
 const { frontmatter } = Astro.props;
+import "../style/global.css";
 ---
 
 <head>
   <title>Blog | {frontmatter.title}</title>
+  <link rel="icon" type="image/svg+xml" href="/LOGO.svg" />
 </head>
-<body class="bg-zinc-800 text-white mt-[4rem]">
+<body class="bg-zinc-900 text-white mt-[4rem]">
   <section class="">
     <div class="mx-auto px-8 max-w-7xl">
       <aside
@@ -15,12 +17,27 @@ const { frontmatter } = Astro.props;
           {frontmatter.author}
         </h1>
       </aside>
-      <article class="pl-[18rem] pr-10">
-        <h1 class="text-[3rem] font-bold">{frontmatter.title}</h1>
-
-        <hr class="border-1 border-zinc-600 mb-10 mt-3" />
-        <slot />
-      </article>
+      <div class="pl-[18rem] pr-20">
+        <a href="/blog">
+          <button
+            class="rounded-full w-[7rem] bg-zinc-600 hover:bg-white text-white hover:text-black px-5 py-1 mb-8"
+          >
+            Back</button
+          >
+        </a>
+        <h1 class="font-roboto leading-snug font-bold text-5xl text-balance">
+          {frontmatter.title}
+        </h1>
+        <h2
+          class="font-roboto font-medium text-gray-500 italic mt-3 mb-7 text-2xl"
+        >
+          {frontmatter.pubDate}
+        </h2>
+        <article class="prose prose-blue lg:prose-lg min-w-full mb-10">
+          <img src={frontmatter.img} alt="" class="rounded-2xl" />
+          <slot />
+        </article>
+      </div>
     </div>
   </section>
 </body>

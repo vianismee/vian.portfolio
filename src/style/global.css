@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .prose code {
+    @apply text-base;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white !important;
+  }
+  p,
+  li,
+  strong,
+  blockquote,
+  table * {
+    @apply text-white !important;
+  }
+  kbd {
+    @apply bg-white text-zinc-700;
+  }
+  mark {
+    @apply bg-yellow-300;
+  }
+}
