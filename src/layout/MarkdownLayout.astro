@@ -11,16 +11,14 @@ import "../style/global.css";
   <section class="">
     <div class="mx-auto px-8 max-w-7xl">
       <aside
-        class="bg-zinc-500 block right-auto fixed z-10 inset-0 top-[150px] w-[19rem] left-[max(0px,calc(50%-45rem))] pl-8 pr-6 h-[10rem] pt-6 rounded-2xl"
+        class="bg-[#b3c7ff]/10 block right-auto fixed z-10 inset-0 top-[150px] w-[19rem] left-[max(0px,calc(50%-45rem))] pl-8 pr-6 h-[10rem] pt-6 rounded-2xl border-[2px] border-[#b3c7ff] overflow-hidden"
       >
-        <h1 class="font-bold">
-          {frontmatter.author}
-        </h1>
+        <h1 class="font-bold">{frontmatter.author}</h1>
       </aside>
       <div class="pl-[18rem] pr-20">
         <a href="/blog">
           <button
-            class="rounded-full w-[7rem] bg-zinc-600 hover:bg-white text-white hover:text-black px-5 py-1 mb-8"
+            class="rounded-full w-[7rem] bg-zinc-600 hover:bg-white text-white hover:text-black px-5 py-1 mb-6"
           >
             Back</button
           >
@@ -29,12 +27,23 @@ import "../style/global.css";
           {frontmatter.title}
         </h1>
         <h2
-          class="font-roboto font-medium text-gray-500 italic mt-3 mb-7 text-2xl"
+          class="font-roboto font-medium text-gray-500 italic my-3 text-xl inline-block"
         >
           {frontmatter.pubDate}
         </h2>
-        <article class="prose prose-blue lg:prose-lg min-w-full mb-10">
-          <img src={frontmatter.img} alt="" class="rounded-2xl" />
+        <div class="flex gap-4 mb-7">
+          {
+            frontmatter.tags.map((tag) => (
+              <div class="bg-sky-700/20 px-3 py-1 border-[1.8px] border-sky-400 rounded-full">
+                <h2 class="uppercase font-bold text-sky-100"># {tag}</h2>
+              </div>
+            ))
+          }
+        </div>
+        <article
+          class="prose prose-blue lg:prose-lg min-w-full mb-10 text-white"
+        >
+          <img src={frontmatter.img} alt="" class="rounded-2xl object-cover" />
           <slot />
         </article>
       </div>

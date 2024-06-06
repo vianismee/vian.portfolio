@@ -12,8 +12,6 @@
   h6 {
     @apply text-white !important;
   }
-  p,
-  li,
   strong,
   blockquote,
   table * {

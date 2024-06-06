@@ -1,0 +1,33 @@
+---
+import MarkdownLayout from "../../../layout/MarkdownLayout.astro";
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../post/*.md");
+  return [
+    { params: { tag: "Learning" }, props: { posts: allPosts } },
+    { params: { tag: "Astro" }, props: { posts: allPosts } },
+    { params: { tag: "TailwindCSS" }, props: { posts: allPosts } },
+    { params: { tag: "JavaScript" }, props: { posts: allPosts } },
+    { params: { tag: "Ai" }, props: { posts: allPosts } },
+    { params: { tag: "Ngobrol" }, props: { posts: allPosts } },
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((posts) =>
+  posts.frontmatter.tags?.includes(tag)
+);
+---
+
+<MarkdownLayout>
+  <p>Posts tagged with {tag}</p>
+  <ul>
+    {
+      filteredPosts.map((post) => (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>{" "}
+        </li>
+      ))
+    }
+  </ul>
+</MarkdownLayout>
