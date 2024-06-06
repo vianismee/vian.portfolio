@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.3.1] - 07/06/2024
+
+### Added
+
+- Added styling on Blog post `index.astro`
+- Added tags on Markdown post and `MarkdownLayout.`astro
+
+### Changed
+
+- Minor fix for styling `<p>` on `global.css`
+
+### Removed
+
+- Remove file `[tags].astro` because eror after deployment on vercel app
+
+```terminal
+log eror
+> eror get getStatic() from astro
+```
+
+> @master Commit #8 SHA [e00eca42]
+
 ## [0.2.5] - 06/06/2024
 
 ### Added
