@@ -23,9 +23,9 @@ const { PageTitle } = Astro.props;
     />
     <title>Vian | {PageTitle}</title>
   </head>
-  <body class="text-white bg-zinc-800">
+  <body class="text-white bg-zinc-800 relative">
     <Navigation />
-    <div class="pt-[150px]">
+    <div class="mt-[150px] max-w-7xl mx-auto">
       <slot />
     </div>
   </body>
