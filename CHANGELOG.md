@@ -7,6 +7,47 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.0] - 09/06/2024
+
+### Added
+
+- Add view transition from astro
+
+```astro
+---
+import { ViewTransitions } from "astro:transitions";
+---
+<head>
+<ViewTransition />
+</head>
+
+```
+
+- Tailwind Scrollbar-hide
+
+```terminal
+pnpm add tailwind-scrollbar-hide
+```
+
+- Add background image on `MainLayout.astro`
+
+### Changed
+
+- Change Navigation bar on `Profile`
+
+### Removed
+
+### Eror
+
+- Adding `scrollbar-hide` to hide scrolling bar on website navigation
+
+```terminal
+log eror
+> eror get getStatic() from astro
+```
+
+> @master Commit #8 SHA [e00eca42]
+
 ## [0.3.1] - 07/06/2024
 
 ### Added
