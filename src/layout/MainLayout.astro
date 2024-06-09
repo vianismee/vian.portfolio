@@ -23,14 +23,13 @@ const { PageTitle } = Astro.props;
     />
     <title>Vian | {PageTitle}</title>
   </head>
-  <body class="text-white bg-zinc-800 relative">
+  <body class="text-white bg-zinc-800 relative scroll-smooth">
     <Navigation />
     <div class="mt-[150px] max-w-7xl mx-auto">
       <slot />
     </div>
   </body>
 </html>
-
 <style is:global>
   .gradient {
     background: -webkit-linear-gradient(
