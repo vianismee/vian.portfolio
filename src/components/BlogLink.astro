@@ -3,41 +3,38 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
 ---
 
 <div class="grid justify-center items-center">
-  <a href="">
-    <div
-      class="flex gap-[16px] justify-center items-center border-[2px] border-zinc-400 rounded-full pr-[18px] bg-zinc-50/10"
-    >
-      <div
-        class="bg-gradient-to-l from-orange-300 to-pink-700 rounded-full h-full px-5 py-2 self-center border-pink-700 border"
-      >
-        <h1 class="font-bold lg:text-xl text-sm text-white">New Blog</h1>
-      </div>
-      <h1 class="lg:text-xl text-sm text-white">
-        {
-          posts.slice(0, 1).map((post) => (
-            <article>
-              <a href={post.url}>{post.frontmatter.title}</a>
-            </article>
-          ))
-        }
-      </h1>
-      <di class="">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-external-link"
-          ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path
-            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-          ></path></svg
-        >
-      </di>
-    </div>
-  </a>
+  {
+    posts.slice(0, 1).map((post) => (
+      <a href={post.url}>
+        <div class="flex gap-[16px] justify-center items-center border-[2.3px] border-zinc-400/40 rounded-full pr-[18px] relative">
+          <div class="inset-10 bg-gradient-to-l from-orange-300 to-pink-700 rounded-full h-full px-5 py-2 self-center border-pink-700 border">
+            <h1 class="font-bold lg:text-xl text-sm text-white">New Blog</h1>
+          </div>
+          <h1 class="lg:text-xl text-sm text-white">
+            {post.frontmatter.title}
+          </h1>
+          <di class="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-external-link"
+            >
+              <>
+                <path d="M15 3h6v6" />
+                <path d="M10 14 21 3" />
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              </>
+            </svg>
+          </di>
+        </div>
+      </a>
+    ))
+  }
 </div>

@@ -1,11 +1,13 @@
 ---
 const { frontmatter } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
 import "../style/global.css";
 ---
 
 <head>
   <title>Blog | {frontmatter.title}</title>
   <link rel="icon" type="image/svg+xml" href="/LOGO.svg" />
+  <ViewTransitions />
 </head>
 <body class="bg-zinc-900 text-white mt-[4rem]">
   <section class="">

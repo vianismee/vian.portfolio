@@ -12,6 +12,7 @@ const { PageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/LOGO.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
     <!-- Roboto -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -23,61 +24,64 @@ const { PageTitle } = Astro.props;
     />
     <title>Vian | {PageTitle}</title>
   </head>
-  <body class="text-white bg-zinc-800 relative scroll-smooth">
+  <body class="text-white bg-[#181818] relative scroll-smooth scrollbar-hide">
+    <div class="absolute -z-10 bg-cover w-full">
+      <img src="/img/BACKGROUND.png" alt="" class="bg-cover h-full w-full" />
+    </div>
     <Navigation />
     <div class="mt-[150px] max-w-7xl mx-auto">
       <slot />
     </div>
+    <style is:global>
+      .gradient {
+        background: -webkit-linear-gradient(
+          196deg,
+          rgba(17, 17, 183, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .box-shadow {
+        box-shadow: 30px 15px 70px -45px #00d4ff;
+      }
+      .main-btn {
+        background: var(
+          --Main-Color,
+          linear-gradient(211deg, #0b5fd2 -70.36%, #00a8ff 181.88%)
+        );
+        box-shadow:
+          102px 71px 35px 0px rgba(0, 0, 0, 0),
+          65px 45px 32px 0px rgba(0, 0, 0, 0.01),
+          37px 26px 27px 0px rgba(0, 0, 0, 0.03),
+          16px 11px 20px 0px rgba(0, 0, 0, 0.04),
+          4px 3px 11px 0px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+    <style>
+      .text-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .typing-animation {
+        animation:
+          typing 3s steps(22),
+          blink-caret 0.5s step-end infinite alternate;
+        border-right: 1px solid; /* Ini membuat efek "caret" */
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+      }
+      @keyframes blink-caret {
+        to {
+          border-color: transparent;
+        }
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  .gradient {
-    background: -webkit-linear-gradient(
-      196deg,
-      rgba(17, 17, 183, 1) 0%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .box-shadow {
-    box-shadow: 30px 15px 70px -45px #00d4ff;
-  }
-  .main-btn {
-    background: var(
-      --Main-Color,
-      linear-gradient(211deg, #0b5fd2 -70.36%, #00a8ff 181.88%)
-    );
-    box-shadow:
-      102px 71px 35px 0px rgba(0, 0, 0, 0),
-      65px 45px 32px 0px rgba(0, 0, 0, 0.01),
-      37px 26px 27px 0px rgba(0, 0, 0, 0.03),
-      16px 11px 20px 0px rgba(0, 0, 0, 0.04),
-      4px 3px 11px 0px rgba(0, 0, 0, 0.05);
-  }
-</style>
-<style>
-  .text-container {
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .typing-animation {
-    animation:
-      typing 3s steps(22),
-      blink-caret 0.5s step-end infinite alternate;
-    border-right: 1px solid; /* Ini membuat efek "caret" */
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-  }
-  @keyframes blink-caret {
-    to {
-      border-color: transparent;
-    }
-  }
-</style>

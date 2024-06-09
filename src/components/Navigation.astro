@@ -3,18 +3,17 @@ import { Icon } from "astro-icon/components";
 
 const { pathname } = Astro.url;
 const lists = [
-  { name: "Profile", url: "/" },
   { name: "Portfolio", url: "/portfolio" },
   { name: "Project", url: "/project" },
   { name: "✨Blog", url: "/blog" },
 ];
 
-const baseClass = "hover:border-b-[4px] border-blue-700 tex-white";
+const baseClass = " border-blue-700 hover:text-white";
 ---
 
 <div class="flex justify-center font-roboto text-2xl">
   <nav
-    class="fixed top-4 lg:h-[85px] h-[50px] px-3 py-3 inline-flex gap-[40px] place-items-center bg-zinc-600/15 backdrop-blur-xl text-white justify-between lg:px-[25px] lg:py-[20px] rounded-full hover:shadow-lg transition-shadow duration-500 z-50"
+    class="fixed top-4 lg:h-[85px] h-[50px] px-3 py-3 inline-flex gap-[40px] place-items-center bg-white/10 backdrop-blur-xl text-white justify-between lg:px-[25px] lg:py-[20px] rounded-full hover:shadow-lg transition-shadow duration-500 z-50"
   >
     <div>
       <div>
@@ -52,15 +51,25 @@ const baseClass = "hover:border-b-[4px] border-blue-700 tex-white";
       </div>
     </div>
     <ul class="lg:flex gap-[21px] text-white/40 hidden align-center">
+      <li
+        class:list={[
+          baseClass,
+          { "border-b-[4px] text-white font-semibold": pathname == "/" },
+        ]}
+      >
+        <a href="/" data-astro-reload> Profile </a>
+      </li>
       {
         lists.map((item) => (
           <li
             class:list={[
               baseClass,
-              { "border-b-[4px] text-white": item.url == pathname },
+              {
+                "border-b-[4px] text-white font-semibold": item.url == pathname,
+              },
             ]}
           >
-            <a href={item.url}>{item.name} </a>
+            <a href={item.url}>{item.name}</a>
           </li>
         ))
       }

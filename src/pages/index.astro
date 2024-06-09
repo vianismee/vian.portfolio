@@ -7,7 +7,7 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
 
 <MainLayout PageTitle="About">
   <!-- Profile -->
-  <section class="bg-zinc-800 h-screen">
+  <section class="h-screen">
     <BlogLink />
     <div class="p-10 grid justify-center">
       <div class="grid place-items-center">
@@ -40,9 +40,13 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
             </p>
             <div class="lg:flex grid gap-10 mx-auto lg:mx-0">
               <button
-                class="bg-gradient-to-bl from-blue-700 to-sky-500 rounded-full px-[20px] py-[11px] font-semibold text-xl hover:bg-white"
+                class="group bg-gradient-to-bl from-blue-700 to-sky-500 rounded-full px-[20px] py-[11px] font-semibold text-xl hover:bg-gradient-to-tr hover:from-white hover:to-white transition-all ease-in-out duration-300"
               >
-                Explore More
+                <h1
+                  class="group-hover:text-zinc-600 transition-all duration-300"
+                >
+                  Explore More
+                </h1>
               </button>
               <Email />
             </div>
@@ -53,101 +57,134 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
   </section>
   <!-- End Profile -->
   <!-- Blog -->
-  <section class="h-screen bg-zinc-800">
+  <section class="h-screen">
     <div class="grid text-white font-roboto">
-      <h1 class="text-3xl lg:text-[64px] font-bold mb-20">Blog</h1>
-      <div class="grid grid-cols-3 gap-10">
-        {
-          posts.slice(0, 3).map((post) => (
-            <a href={post.url}>
-              <div class="group">
-                <div class="overflow-hidden rounded-2xl">
-                  <div class="group-hover:scale-125 transition-all ease-in-out">
-                    <img src={post.frontmatter.img} alt="" />
-                  </div>
-                </div>
-                <article class="font-roboto mt-5 pl-2">
-                  <h1 class="group-hover:text-blue-400 font-bold text-4xl">
-                    {post.frontmatter.title}
-                  </h1>
-                  <div class="inline-flex justify-center items-center gap-3 mb-0 mt-3">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#a1a1aa"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-calendar"
-                      >
-                        <>
-                          <path d="M8 2v4" />
-                          <path d="M16 2v4" />
-                          <rect width="18" height="18" x="3" y="4" rx="2" />
-                          <path d="M3 10h18" />
-                        </>
-                      </svg>
-                    </div>
-                    <h2 class="text-zinc-400 text-xl">
-                      {post.frontmatter.pubDate}
-                    </h2>
-                  </div>
-                </article>
+      <div class="flex justify-between">
+        <h1 class="text-3xl lg:text-[64px] font-bold mb-20">Blog</h1>
+        <div>
+          <a href="/blog">
+            <button
+              class="py-1 pl-5 pr-2 outline outline-2 rounded-full inline-flex gap-2 justify-center items-center group hover:bg-white transition-all duration-500 ease-in-out"
+            >
+              <p
+                class="text-xl group-hover:text-black transition-all duration-150 ease-in-out"
+              >
+                See All
+              </p>
+              <div
+                class="-rotate-45 group-hover:rotate-0 transition-all duration-200 ease-in-out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-chevron-right group-hover:stroke-black"
+                  ><circle cx="12" cy="12" r="10"></circle><path
+                    d="m10 8 4 4-4 4"></path></svg
+                >
               </div>
-            </a>
-          ))
-        }
+            </button>
+          </a>
+        </div>
       </div>
     </div>
-    <!-- End Blog -->
+    <div class="grid grid-cols-3 gap-10">
+      {
+        posts.slice(0, 3).map((post) => (
+          <a href={post.url}>
+            <div class="group">
+              <div class="overflow-hidden rounded-2xl">
+                <div class="group-hover:scale-125 transition-all ease-in-out">
+                  <img src={post.frontmatter.img} alt="" />
+                </div>
+              </div>
+              <article class="font-roboto mt-5 pl-2">
+                <h1 class="group-hover:text-blue-400 font-bold text-4xl">
+                  {post.frontmatter.title}
+                </h1>
+                <div class="inline-flex justify-center items-center gap-3 mb-0 mt-3">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#a1a1aa"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar"
+                    >
+                      <>
+                        <path d="M8 2v4" />
+                        <path d="M16 2v4" />
+                        <rect width="18" height="18" x="3" y="4" rx="2" />
+                        <path d="M3 10h18" />
+                      </>
+                    </svg>
+                  </div>
+                  <h2 class="text-zinc-400 text-xl">
+                    {post.frontmatter.pubDate}
+                  </h2>
+                </div>
+              </article>
+            </div>
+          </a>
+        ))
+      }
+    </div>
   </section>
-  <!-- Typing Text Effect -->
-  <script type="module">
-    const texts = [
-      "Hallo,",
-      "Konichiwa,",
-      "Hej,",
-      "Annyeong,",
-      "Hoi,",
-      "Ola,",
-      "Salut,",
-      "Ciao,",
-    ];
-    let index = 0;
-    let isDeleting = false;
-    let currentText = "";
-    let typingSpeed = 100; // Kecepatan mengetik (dalam milidetik)
+  <!-- End Blog -->
+</MainLayout>
+<!-- Typing Text Effect -->
+<script type="module">
+  const texts = [
+    "Hallo,",
+    "Konichiwa,",
+    "Hej,",
+    "Annyeong,",
+    "Hoi,",
+    "Ola,",
+    "Salut,",
+    "Ciao,",
+  ];
+  let index = 0;
+  let isDeleting = false;
+  let currentText = "";
+  let typingSpeed = 100; // Kecepatan mengetik (dalam milidetik)
 
-    function type() {
-      const text = texts[index];
-      if (isDeleting) {
-        currentText = text.substring(0, currentText.length - 1);
-      } else {
-        currentText = text.substring(0, currentText.length + 1);
-      }
-      document.getElementById("text").textContent = currentText;
-      let typeSpeed = typingSpeed;
-      if (isDeleting) {
-        typeSpeed /= 2; // Menghapus dua kali lebih cepat
-      }
-
-      if (!isDeleting && currentText === text) {
-        typeSpeed = 2500; // Jeda setelah selesai mengetik
-        isDeleting = true;
-      } else if (isDeleting && currentText === "") {
-        isDeleting = false;
-        index = (index + 1) % texts.length;
-      }
-
-      setTimeout(type, typeSpeed);
+  function type() {
+    const text = texts[index];
+    if (isDeleting) {
+      currentText = text.substring(0, currentText.length - 1);
+    } else {
+      currentText = text.substring(0, currentText.length + 1);
+    }
+    document.getElementById("text").textContent = currentText;
+    let typeSpeed = typingSpeed;
+    if (isDeleting) {
+      typeSpeed /= 2; // Menghapus dua kali lebih cepat
     }
 
-    window.onload = function () {
-      type();
-    };
-  </script>
-</MainLayout>
+    if (!isDeleting && currentText === text) {
+      typeSpeed = 2500; // Jeda setelah selesai mengetik
+      isDeleting = true;
+    } else if (isDeleting && currentText === "") {
+      isDeleting = false;
+      index = (index + 1) % texts.length;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  window.onload = function () {
+    type();
+  };
+</script>
