@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.1] - 17/06/2024
+
+### Added
+
+- Added supabase and connect to database
+
+```terminal
+pnpm add @supabase/supabase-js
+```
+
+### Changed
+
+### Removed
+
+### Eror
+
+> @master Commit #9 SHA [b2d7ace]
+
 ## [0.4.0] - 09/06/2024
 
 ### Added
