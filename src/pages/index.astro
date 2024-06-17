@@ -2,6 +2,12 @@
 import BlogLink from "../components/BlogLink.astro";
 import Email from "../components/emailCopy.astro";
 import MainLayout from "../layout/MainLayout.astro";
+
+import { supabase } from "../../public/supabase.js";
+
+let { data: comment, error } = await supabase.from("comment").select("*");
+console.log(comment, error);
+
 const posts = await Astro.glob("../pages/blog/post/*.md");
 ---
 
@@ -45,7 +51,7 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
                 <h1
                   class="group-hover:text-zinc-600 transition-all duration-300"
                 >
-                  Explore More
+                  Download CV
                 </h1>
               </button>
               <Email />

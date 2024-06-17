@@ -39,6 +39,8 @@ export default {
 					  'background-color': 'rgb(var(--color-code-bg))',
 					  color: 'rgb(var(--color-code-text))',
 					  padding: '0.25rem 0.5rem',
+					  'border-width': '1px',
+					  'border-color': '#FFFFFF',
 					  'border-radius': '0.25rem',
 					  'font-size': '0.875rem',
 					  'line-height': '1.5',
@@ -84,9 +86,23 @@ export default {
 					'blockquote p:last-of-type::after': {
 					  content: '',
 					},
+					pre: {
+						padding: '3rem',
+						'border-width': '2px',
+					  	'border-color': '#b3c7ff',
+					},
 				  },
 				},
 			 },
+			animation: {
+				marquee : 'marquee 30s linear infinite',
+			},
+			keyframes: {
+				marquee: {
+					'0%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
+			},
 		},
 	},
 	plugins: [require('@tailwindcss/typography', 'tailwind-scrollbar-hide')],

@@ -1,5 +1,7 @@
 ---
 const { frontmatter } = Astro.props;
+import { Picture } from "astro:assets";
+
 import { ViewTransitions } from "astro:transitions";
 import "../style/global.css";
 ---
@@ -45,7 +47,12 @@ import "../style/global.css";
         <article
           class="prose prose-blue lg:prose-lg min-w-full mb-10 text-white"
         >
-          <img src={frontmatter.img} alt="" class="rounded-2xl object-cover" />
+          <Picture
+            src={frontmatter.img}
+            alt=""
+            formats={["avif", "webp"]}
+            inferSize={true}
+          />
           <slot />
         </article>
       </div>

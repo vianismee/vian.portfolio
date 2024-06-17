@@ -23,4 +23,8 @@
   mark {
     @apply bg-yellow-300;
   }
+  .swiper {
+    width: 600px;
+    height: 300px;
+  }
 }
