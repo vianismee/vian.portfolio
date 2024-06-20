@@ -1,0 +1,33 @@
+---
+import { supabase } from "../data/supabase.js";
+let { data: user, error } = await supabase.from("user").select("*");
+---
+
+<style>
+  swiper-container {
+    width: 340px;
+    height: 320px;
+  }
+
+  swiper-slide {
+    display: flex;
+  }
+</style>
+<body>
+  <swiper-container class="mySwiper mb-6" effect="cards" grab-cursor="true">
+    {
+      user.map((user) => (
+        <swiper-slide class="bg-white rounded-xl p-5">
+          <article class="text-black grid place-items-start justify-center">
+            <h1 class="font-roboto text-xl font-bold">{user.name}</h1>
+            <p>{user.massage}</p>
+          </article>
+        </swiper-slide>
+      ))
+    }
+  </swiper-container>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+  ></script>
+</body>

@@ -105,5 +105,8 @@ export default {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography', 'tailwind-scrollbar-hide')],
+	plugins: [require('@tailwindcss/typography', 'tailwind-scrollbar-hide', '@tailwindcss/forms')({
+		strategy: 'base',
+		strategy: 'class',
+	})],
 }

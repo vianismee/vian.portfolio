@@ -1,12 +1,12 @@
 ---
 import BlogLink from "../components/BlogLink.astro";
+import Comment from "../components/Comment.astro";
 import Email from "../components/emailCopy.astro";
 import MainLayout from "../layout/MainLayout.astro";
 
-import { supabase } from "../data/supabase.js";
-
-let { data: comment, error } = await supabase.from("comment").select("*");
-console.log(comment, error);
+// import { supabase } from "../data/supabase.js";
+// let { data: comment, error } = await supabase.from("comment").select("*");
+// console.log(comment, error);
 
 const posts = await Astro.glob("../pages/blog/post/*.md");
 ---
@@ -63,7 +63,7 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
   </section>
   <!-- End Profile -->
   <!-- Blog -->
-  <section class="h-screen">
+  <section class="mb-[200px]">
     <div class="grid text-white font-roboto">
       <div class="flex justify-between">
         <h1 class="text-3xl lg:text-[64px] font-bold mb-20">Blog</h1>
@@ -148,6 +148,11 @@ const posts = await Astro.glob("../pages/blog/post/*.md");
     </div>
   </section>
   <!-- End Blog -->
+  <!-- Form Comment -->
+  <section class="mb-[200px]">
+    <Comment client:load />
+  </section>
+  <!-- End Form Comment -->
 </MainLayout>
 <!-- Typing Text Effect -->
 <script type="module">
